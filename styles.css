@@ -1,0 +1,69 @@
+/* BOX-SIZING:  The box-sizing property handles how padding and border will be added
+ 	to an element. When it comes to box-sizing, the default is content-box, 
+    which when given padding and border its total width and height will increase.
+    The other option is border-box, which when given padding and border, does not change
+    its original dimensions. It pads the material in the interior of the box and 
+    limits the amount of space available in the interior. Margin is not accounted for
+    in box-sizing. */
+/*  FLEX-WRAP:  When we set a display to flex, we get some other properties set for us by default
+    One of those default properties is that each item in the container will take
+    the same amount of space in the screen. And to the container itself, it tells it 
+    that its items should be laid out in rows (vertical), will be positioned left-to-right,
+    and will be stretched out across the full length of the containers height. The default flex-wrap
+    setting is no-wrap, so if we want our items to fill in the entire container,
+    filling all rows and columns, we have to change flex-wrap to wrap. */
+/*  POSITION:  When defining the position of an item is absolute, its position is absolute
+    relative to the next parent whose position is also defined, so if no parents have
+    a defined position, the item will align itself with the top right corner
+    of the body. If the parents position is defined as relative, it will align itself relative to
+    the parent. */
+
+* {
+	font-family: 'Raleway', sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh; /* vh stands for Viewport Height. Viewport is the visible window of the webpage. A setting of 100vh takes 100% of the available viewport height space. */
+	display: flex;
+	background-color: peachpuff;
+}
+
+.memory-game {
+	width: 640px;
+	height: 640px;
+	margin: auto; /* Setting the body display to flex and the .memory-game margin to auto automatically centers the memory-game in the middle of the viewport.  */
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px solid white;
+}
+
+.memory-card {
+	width: calc(25% - 14px); /*  Without this calc function, the defined margin would cause the cards to overflow the available space. Calc allows us to subtract the added margin amount from the width and height percentages. */
+	height: calc(33.33% - 14px);
+	margin: 7px;
+	position: relative;
+	transform: scale(1.0); /*  Must have a transform starting point for the memory-card transition on click (below) to work.  */
+}
+
+.memory-card:active { /* :active is basically an 'event listener' selector that listens for mouse clicks of the selected element/s.  */
+	transform: scale(.97);
+	transition: transform .2s; /* Takes .2s to transform from the initial scale(1.0) to the click scale(.97) */
+}
+
+.front-face, .back-face {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	background-color: darkseagreen;
+	border: 3px solid navajowhite;
+}
+
+
+
+
+

@@ -1,1 +1,1 @@
-# memory-game
+A classic card-flip memory game.

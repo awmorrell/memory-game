@@ -12,7 +12,7 @@
     and will be stretched out across the full length of the containers height. The default flex-wrap
     setting is no-wrap, so if we want our items to fill in the entire container,
     filling all rows and columns, we have to change flex-wrap to wrap. */
-/*  POSITION:  When defining the position of an item is absolute, its position is absolute
+/*  POSITION:  When defining the position of an item as absolute, its position is absolute
     relative to the next parent whose position is also defined, so if no parents have
     a defined position, the item will align itself with the top right corner
     of the body. If the parents position is defined as relative, it will align itself relative to
@@ -27,8 +27,21 @@
 
 body {
 	height: 100vh; /* vh stands for Viewport Height. Viewport is the visible window of the webpage. A setting of 100vh takes 100% of the available viewport height space. */
+	width: 100vw;
 	display: flex;
 	background-color: peachpuff;
+}
+
+h1 {
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: 33.33%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.description {
+	font-size: 25px;
 }
 
 .memory-game {
@@ -37,6 +50,7 @@ body {
 	margin: auto; /* Setting the body display to flex and the .memory-game margin to auto automatically centers the memory-game in the middle of the viewport.  */
 	display: flex;
 	flex-wrap: wrap;
+	perspective: 1000px; /* Perspective: A <length> giving the distance from the user to the z=0 plane. It is used to apply a perspective transform to the children of the element.  */
 	border: 2px solid white;
 }
 
@@ -46,6 +60,8 @@ body {
 	margin: 7px;
 	position: relative;
 	transform: scale(1.0); /*  Must have a transform starting point for the memory-card transition on click (below) to work.  */
+	transform-style: preserve-3d; /*  This is what inserts our elements inside of the 3D space we created in the memory container. Otherwise, the cards would stay flat and remain in the 2D plane. */
+	transition: transform .5s;
 }
 
 .memory-card:active { /* :active is basically an 'event listener' selector that listens for mouse clicks of the selected element/s.  */
@@ -53,14 +69,23 @@ body {
 	transition: transform .2s; /* Takes .2s to transform from the initial scale(1.0) to the click scale(.97) */
 }
 
+.memory-card.flip { /*  this styling only applies to the cards when the div class is toggled to <div class="memory-card flip"> */
+	transform: rotateY(180deg);
+}
+
 .front-face, .back-face {
 	width: 100%;
 	height: 100%;
-	padding: 20px;
+	padding: 25px;
 	position: absolute;
 	border-radius: 5px;
 	background-color: darkseagreen;
+	backface-visibility: hidden; /*  Every image has a "backface", which is just its mirror image. So now when we flip the card, the mirror image of the JS logo is hidden. */
 	border: 3px solid navajowhite;
+}
+
+.front-face {
+	transform: rotateY(180deg); /* Now, the default position of the front face is flipped the other way, and its "backface" is facing us, but the backface of both images is hidden. so when we flip the card, its front face rotates towards us because it started flipped facing the other way. Just talk yourself through it youll get it.. */
 }
 
 

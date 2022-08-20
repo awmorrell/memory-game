@@ -2,6 +2,7 @@ const cards = document.querySelectorAll(".memory-card"); /*  If you want to grab
 
 let hasFlippedCard = false;
 let lockBoard = false;
+let matches = 0;
 let firstCard, secondCard; /*  Simply creating two variables that have yet to be defined. */
 
 function flipCard() {
@@ -35,6 +36,11 @@ function disableCards () {
 	secondCard.removeEventListener('click', flipCard);
 
 	resetBoard();
+	matches++;
+
+	if (matches === 6) {
+		wellDoneMessage();
+	};
 }
 
 function unflipCards () {
@@ -59,6 +65,10 @@ function resetBoard() {
 		card.style.order = randomPos; //  order is a flex-box property, and it is a flex-items property that defaults to zero. If undefined, they are ordered by source order. If a different integer is assigned, they are ordered by integer number, then source order, if they are all given a random integer, they are all ordered by integer number. 
 	});
 })(); // wrapping the function like this turns it into an IIFE (Immediately Invoked Function Expression)
+
+function wellDoneMessage() {
+	document.getElementById("overlay").style.display = "block";
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard)); /* const cards is an array of every card div, so we must loop through them all to perform an eventListener */
 

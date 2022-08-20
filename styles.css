@@ -21,7 +21,7 @@
 * {
 	font-family: 'Raleway', sans-serif;
 	padding: 0;
-	margin: 0;
+	margin: 2px;
 	box-sizing: border-box;
 }
 
@@ -40,6 +40,7 @@ body {
 	flex-wrap: wrap;
 	perspective: 1000px; /* Perspective: A <length> giving the distance from the user to the z=0 plane. It is used to apply a perspective transform to the children of the element.  */
 	border: 2px solid white;
+	border-m
 }
 
 .memory-card {
@@ -74,6 +75,24 @@ body {
 
 .front-face {
 	transform: rotateY(180deg); /* Now, the default position of the front face is flipped the other way, and its "backface" is facing us, but the backface of both images is hidden. so when we flip the card, its front face rotates towards us because it started flipped facing the other way. Just talk yourself through it youll get it.. */
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 26%; /* Full width (cover the whole page) */
+  height: 10%; /* Full height (cover the whole page) */
+  top: 42%;
+  left: 37%;
+  right: 50%;
+  bottom: 50%;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  padding-top: 20px;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }
 
 

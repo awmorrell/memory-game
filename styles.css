@@ -32,18 +32,6 @@ body {
 	background-color: peachpuff;
 }
 
-h1 {
-	text-align: center;
-	margin-top: auto;
-	margin-bottom: 33.33%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.description {
-	font-size: 25px;
-}
-
 .memory-game {
 	width: 640px;
 	height: 640px;

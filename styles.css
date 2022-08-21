@@ -27,7 +27,6 @@
 
 body {
 	height: 100vh; /* vh stands for Viewport Height. Viewport is the visible window of the webpage. A setting of 100vh takes 100% of the available viewport height space. */
-	width: 100vw;
 	display: flex;
 	background-color: peachpuff;
 }

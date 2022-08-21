@@ -80,17 +80,17 @@ body {
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 26%; /* Full width (cover the whole page) */
-  height: 10%; /* Full height (cover the whole page) */
-  top: 42%;
-  left: 37%;
+  width: 45%; /* Full width (cover the whole page) */
+  height: 9%; /* Full height (cover the whole page) */
+  top: 4%;
+  left: 27%;
   right: 50%;
   bottom: 50%;
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   text-align: center;
-  font-size: 25px;
+  font-size: 21px;
   color: white;
-  padding-top: 20px;
+  padding: 14px;
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }

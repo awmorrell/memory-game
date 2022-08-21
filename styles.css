@@ -81,7 +81,7 @@ body {
   display: none; /* Hidden by default */
   width: 45%; /* Full width (cover the whole page) */
   height: 9%; /* Full height (cover the whole page) */
-  top: 4%;
+  top: 34%;
   left: 27%;
   right: 50%;
   bottom: 50%;
@@ -89,7 +89,7 @@ body {
   text-align: center;
   font-size: 21px;
   color: white;
-  padding: 14px;
+  padding: 37px;
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }

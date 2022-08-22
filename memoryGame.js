@@ -66,7 +66,7 @@ function resetBoard() {
 	});
 })(); // wrapping the function like this turns it into an IIFE (Immediately Invoked Function Expression)
 
-function shuffle() {
+function newGameshuffle() {
 	setTimeout(() => {
 		cards.forEach(card => {
 			let randomPos = Math.floor(Math.random() * 12);
@@ -86,7 +86,7 @@ function newGame() {
 	cards.forEach(card => card.classList.remove('flip'));
 	document.getElementById("overlay").style.display = "none";
 	enableCards();
-	shuffle();
+	newGameshuffle();
 }
 
 function enableCards () {

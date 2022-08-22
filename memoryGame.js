@@ -66,10 +66,34 @@ function resetBoard() {
 	});
 })(); // wrapping the function like this turns it into an IIFE (Immediately Invoked Function Expression)
 
+function shuffle() {
+	setTimeout(() => {
+		cards.forEach(card => {
+			let randomPos = Math.floor(Math.random() * 12);
+			card.style.order = randomPos;
+		});
+	}, 1000);
+};
+
 function wellDoneMessage() {
 	document.getElementById("overlay").style.display = "block";
 }
 
+function newGame() {
+	[hasFlippedCard, lockBoard] = [false, false];
+	[firstCard, secondCard] = [null, null];
+	matches = 0;
+	cards.forEach(card => card.classList.remove('flip'));
+	document.getElementById("overlay").style.display = "none";
+	enableCards();
+	shuffle();
+}
+
+function enableCards () {
+	cards.forEach(card => card.addEventListener('click', flipCard));
+}
+
+document.getElementById("overlay").addEventListener('click', newGame);
 cards.forEach(card => card.addEventListener('click', flipCard)); /* const cards is an array of every card div, so we must loop through them all to perform an eventListener */
 
 

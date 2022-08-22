@@ -21,7 +21,6 @@
 * {
 	font-family: 'Raleway', sans-serif;
 	padding: 0;
-	margin: 2px;
 	box-sizing: border-box;
 }
 
@@ -79,9 +78,9 @@ body {
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 37%; /* Full width (cover the whole page) */
+  width: 38%; /* Full width (cover the whole page) */
   height: 7%; /* Full height (cover the whole page) */
-  top: 42%;
+  top: 35%;
   left: 31%;
   right: 50%;
   bottom: 50%;
@@ -102,6 +101,11 @@ body {
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+}
+
+#text > span {
+	font-size: 9px;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 

@@ -37,8 +37,8 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	perspective: 1000px; /* Perspective: A <length> giving the distance from the user to the z=0 plane. It is used to apply a perspective transform to the children of the element.  */
-	border: 2px solid white;
-	border-m
+	border: 4px solid rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
 }
 
 .memory-card {
